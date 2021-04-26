@@ -1,5 +1,7 @@
+// @ts-ignore
 import React, { useEffect, useState } from "react"
 import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native'
+// @ts-ignore
 import Sodium from 'react-native-sodium-boa'
 
 import { styles } from './styles'
@@ -12,8 +14,9 @@ import CryptoCoreTests from './SodiumTests/CryptoCoreTests'
 import CryptoScalarmultTests from './SodiumTests/CryptoScalarmultTests'
 import CryptoGenerichashTests from './SodiumTests/CryptoGenerichashTests'
 import CryptoXchacha20poly1305Tests from './SodiumTests/CryptoXchacha20poly1305Tests'
+import CryptoCoreTests_Use_BOASodiumRN from './SodiumTests/CryptoCoreTests_Use_BOASodiumRN'
 
-export default function YourApp() {
+export default function App() {
 
     const [sodiumVersion, setSodiumVersion] = useState("")
     const [selectedTest, setSelectedTest] = useState(0)
@@ -41,6 +44,7 @@ export default function YourApp() {
                 <Button onPress={() => setSelectedTest(7)} title="Crypto scalarmult"/>
                 <Button onPress={() => setSelectedTest(8)} title="Crypto generichash"/>
                 <Button onPress={() => setSelectedTest(9)} title="Crypto Xchacha20"/>
+                <Button onPress={() => setSelectedTest(10)} title="Crypto core - BOASodiumRN"/>
             </View>
             }
             <View style={{flex:1}}>
@@ -53,6 +57,7 @@ export default function YourApp() {
                 {selectedTest == 7 && <CryptoScalarmultTests/> }
                 {selectedTest == 8 && <CryptoGenerichashTests/> }
                 {selectedTest == 9 && <CryptoXchacha20poly1305Tests/> }
+                {selectedTest == 10 && <CryptoCoreTests_Use_BOASodiumRN/> }
             </View>
             {selectedTest != 0 &&
             <View>
