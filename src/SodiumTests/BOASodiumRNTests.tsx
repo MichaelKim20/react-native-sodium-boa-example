@@ -1,8 +1,7 @@
 // @ts-ignore
+//import { SodiumHelper } from 'boa-sdk-ts';
 import { BOASodiumRN } from '../modules/crypto/BOASodiumRN';
 import {BasicTest} from './BasicTest';
-import Sodium from "react-native-sodium-boa";
-import Base64 from "base64-js";
 
 export default class Test extends BasicTest
 {
@@ -11,6 +10,7 @@ export default class Test extends BasicTest
     }
 
     async _test() {
+        //SodiumHelper.assign(new BOASodiumRN());
         let sample_crypto_core_ed25519_add_sub = [
             {
                 "p": "00611a85e5a2e76b9218d9c39e4a76428aa6b76a534ede3c383d2b76b96ffb90",
